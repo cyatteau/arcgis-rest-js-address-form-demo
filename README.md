@@ -1,7 +1,7 @@
 # Esri Federal GIS Conference 2023: Demo for REST JS
 
 ## Description
-A simple address form that uses ArcGIS REST JS to perform address verification, suggestions, and auto-completion.
+A simple address form that uses ArcGIS REST JS to perform address validation, suggestions, and auto-completion.
 
 <!-- ## Live Demo Clip
 ![Demo2_Live_Clip](https://user-images.githubusercontent.com/112517097/203167849-264f4cf8-b21e-4c58-a667-a5d858e5f2f0.gif)
