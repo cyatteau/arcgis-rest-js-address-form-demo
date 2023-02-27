@@ -4,7 +4,6 @@ import API_KEY from "./js/apikey";
 const authentication = new ApiKeyManager({ key: API_KEY });
 
 let sugg = [];
-
 let inputField = document.getElementById("input");
 let ulField = document.getElementById("suggestions");
 let apt = document.getElementById("apt");
@@ -13,20 +12,20 @@ let state = document.getElementById("state");
 let postal = document.getElementById("postal");
 let country = document.getElementById("country");
 let form = document.getElementById("form");
+let modalBody = document.getElementById("modal-body");
+let submitBtn = document.getElementById("submit-btn");
 let address = "";
 let theCity = "";
 let theState = "";
 let thePostal = "";
 let theCountry = "";
 let value = {};
+let magic = "";
 
 //getting suggestions
 inputField.addEventListener("input", ({ target }) => {
   suggest(target.value, {
-    params: {
-      // countryCode: "USA",
-      // location: [-77, 38],
-    },
+    category: "Point Address",
     authentication,
   }).then((res) => {
     res.suggestions.forEach((item) => {
@@ -64,6 +63,7 @@ function changeAutoComplete(data) {
 }
 
 function geo(magicKey) {
+  magic = magicKey;
   geocode({
     magicKey,
     maxLocations: 1,
@@ -108,7 +108,6 @@ function setAllFields() {
     event.preventDefault();
     theCountry = event.target.value;
   });
-
   geocode({
     address: address,
     city: theCity,
@@ -129,11 +128,15 @@ form.addEventListener("submit", (event) => {
     countryCode: theCountry,
     authentication,
   }).then((res) => {
-    if (res.candidates[0].score > 96) {
-      alert("Form accepted!");
-      window.location.reload(false);
+    if (res.candidates[0].score > 99) {
+      modalBody.innerHTML = "Form submitted!";
+      submitBtn.onclick = handleReload;
     } else {
-      alert("Please check address!");
+      modalBody.innerHTML = "Please check address!";
     }
   });
 });
+
+function handleReload() {
+  window.location.reload(false);
+}

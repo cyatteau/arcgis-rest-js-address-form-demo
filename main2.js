@@ -129,11 +129,11 @@ form.addEventListener("submit", (event) => {
     countryCode: theCountry,
     authentication,
   }).then((res) => {
-    if (res.candidates[0].score > 95) {
-      alert("Form accepted!");
-      window.location.reload(false);
+    if (res.candidates[0].score > 99) {
+      modalBody.innerHTML = "Form submitted!";
+      submitBtn.onclick = handleReload;
     } else {
-      alert("Please check address!");
+      modalBody.innerHTML = "Please check address!";
     }
   });
 });

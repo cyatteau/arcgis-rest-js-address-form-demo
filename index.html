@@ -13,18 +13,23 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="/icons8-address-64.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/icons8-address-64.png" />
     <link rel="stylesheet" href="./style.css" />
     <title>Address Form App</title>
   </head>
-  <body>
+  <body id="the-body">
     <h2>Address Form</h2>
     <form id="form">
       <input id="input" type="text" placeholder="Address" />
       <ul class="suggestions" id="suggestions"></ul>
       <div class="form-below">
         <div>
-          <input placeholder="Apt, unit, suite or floor # (optional)" id="apt" />
+          <input
+            placeholder="Apt, unit, suite or floor # (optional)"
+            id="apt"
+          />
         </div>
         <div>
           <input placeholder="City" id="city" />
@@ -40,7 +45,27 @@
         </div>
       </div>
       <br />
-      <button class="button">Submit</button>
+      <button
+        class="button btn btn-info btn-lg"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        Submit
+      </button>
+      <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body" id="modal-body"></div>
+              <button id="submit-btn" class="btn-info btn-lg button btn" data-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
     <script type="module" src="/main.js"></script>
   </body>
