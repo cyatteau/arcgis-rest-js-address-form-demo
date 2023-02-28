@@ -34,20 +34,25 @@ input {
 }
 
 .button {
-  width: 15%;
   border: none;
   border-radius: 10px;
   background-color: rgb(75, 119, 240);
   color: white;
   font-weight: 600;
   font-size: 18px;
-  padding: 8px 3px;
+  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+}
+
+.button:active {
+  color: white;
 }
 
 .button:hover {
   cursor: pointer;
   background-color: rgb(65, 103, 207);
+  color: white;
 }
 
 .form-below {
@@ -84,8 +89,18 @@ li {
 }
 
 .modal-content {
-  font-size: 30px;
-  padding: 20px 2px;
+  font-size: 28px;
+  padding: 10px 0px;
+}
+
+#button-area {
+  display: flex;
+  margin-top: 18px;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1100px) {
@@ -100,10 +115,6 @@ li {
   input {
     width: 360px;
   }
-
-  .button {
-    width: 25%;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -116,8 +127,5 @@ li {
   }
   form {
     width: 80%;
-  }
-  .button {
-    width: 40%;
   }
 }

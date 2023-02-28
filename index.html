@@ -45,23 +45,23 @@
         </div>
       </div>
       <br />
-      <button
-        class="button btn btn-info btn-lg"
-        data-toggle="modal"
-        data-target="#myModal"
-      >
+      <button class="button" data-toggle="modal" data-target="#myModal">
         Submit
       </button>
       <div class="container">
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
+          <div class="modal-dialog" id="m-dialog">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-body" id="modal-body"></div>
-              <button id="submit-btn" class="btn-info btn-lg button btn" data-dismiss="modal">
-                OK
-              </button>
+              <div id="button-area">
+                <button
+                  id="submit-btn"
+                  class="btn-lg button"
+                  data-dismiss="modal"
+                ></button>
+              </div>
             </div>
           </div>
         </div>
